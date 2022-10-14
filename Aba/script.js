@@ -1,5 +1,7 @@
 let str = 'aabbbbcweqwerq';
 
+// Поиск и подсчет символа
+
 let alp = 'abcdefghijklmnopqrstuvwxyz';
 let count = 0;
 
@@ -15,4 +17,5 @@ for(let i = 0; i < alp.length; i++) {
 }
 
 console.log(object)
+
 
