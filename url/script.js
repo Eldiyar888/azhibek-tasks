@@ -1,5 +1,5 @@
 let url = ['http://github.com/carbonfive/raygun', 'http://zombie.fandom.com/wiki/Bites', 'https://www.cnet.com'];
-let index = 2;
+let index = 0;
 
 // Поиск имени из URL
 
@@ -16,7 +16,7 @@ let secondInd = url[index].indexOf('.com', firstInd);
 
 str = '';
 
-for(let i = firstInd; i < secondInd; i++) {
+for(let i = firstInd; i < secondInd; i++) { 
    str += url[index].charAt(i);
 }
 
