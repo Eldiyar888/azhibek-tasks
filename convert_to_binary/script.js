@@ -2,18 +2,17 @@ let a = prompt("Введите десятичное число для преоб
 
 // Преобразование из десятичной в двоичную
 
-let b = 0;
-let arr = []
-let revArr = []
+function convertToBinary(a) {
+    let b = 0;
+    let temp = '';
 
-while(a >= 1) {
-    a = a / 2;
-    b = ((a * 2) % 2)
-    arr.push(Math.trunc(Math.floor(b)));
+    while (a >= 1) {
+        a = a / 2;
+        b = ((a * 2) % 2);
+        temp += Math.trunc(Math.floor(b));
+    }
+    return temp.split("").reverse().join("")
 }
 
-for(let i = arr.length; i >= 0; i--) {
-    revArr.push(arr[i])
-}
+console.log(convertToBinary(a));
 
-console.log(revArr)

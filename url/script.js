@@ -3,24 +3,31 @@ let index = 0;
 
 // Поиск имени из URL
 
-let firstInd = url[index].indexOf('www');
-if (firstInd == -1) {
-    firstInd = url[index].indexOf('/');
-    firstInd += 2;
+function getDomainUrl(url) {
+    let firstInd = url[index].indexOf('www');
+    
+    if (firstInd == -1) {
+        firstInd = url[index].indexOf('/');
+        firstInd += 2;
+    }
+    else {
+        firstInd+=4;
+    }
+    
+    let secondInd = url[index].indexOf('.com', firstInd);
+    
+    str = '';
+    
+    for(let i = firstInd; i < secondInd; i++) { 
+       str += url[index].charAt(i);
+    }
+    
+    return str;
 }
-else {
-    firstInd+=4;
-}
 
-let secondInd = url[index].indexOf('.com', firstInd);
+console.log(getDomainUrl(url));
 
-str = '';
 
-for(let i = firstInd; i < secondInd; i++) { 
-   str += url[index].charAt(i);
-}
-
-console.log(str)
 
 
 

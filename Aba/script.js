@@ -1,21 +1,26 @@
-let str = 'aabbbbcweqwerq';
+let str = 'some text';
 
 // Поиск и подсчет символа
 
-let alp = 'abcdefghijklmnopqrstuvwxyz';
-let count = 0;
+function getCountSymbol(str) {
+    let alp = 'abcdefghijklmnopqrstuvwxyz';
+    let count = 0;
 
-const object = {};
+    const object = {};
 
-for(let i = 0; i < alp.length; i++) { 
-    for(let j = i; j < str.length; j++) {
-        if (str[j] == alp[i]) {
-            count++;
-            object[alp[i]] = count;
+    for(let i = 0; i < alp.length; i++) { 
+        for(let j = 0; j < str.length; j++) {
+            if (str[j].toLowerCase() == alp[i].toLowerCase()) {
+                count++;
+                object[str[j]] = count;
+            }
         }
+        count = 0;
     }
+    return object;
 }
 
-console.log(object)
+console.log(getCountSymbol(str));
+
 
 
