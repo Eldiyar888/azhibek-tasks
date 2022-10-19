@@ -1,18 +1,18 @@
-let str = 'aabbbbcweqwerq';
+let str = 'some text';
 
-let alp = 'abcdefghijklmnopqrstuvwxyz';
-let count = 0;
-
-const object = {};
-
-for(let i = 0; i < alp.length; i++) { 
-    for(let j = i; j < str.length; j++) {
-        if (str[j] == alp[i]) {
-            count++;
-            object[alp[i]] = count;
+function getCountSymbol(str) {
+    let object = {};
+    for(let i = 0; i < str.length; i++) {
+        if (str[i] in object) {
+            object[str[i]]++;
+            continue;
         }
+        object[str[i]] = 1;
     }
+    return object;
 }
 
-console.log(object)
+console.log(getCountSymbol(str));
+
+
 

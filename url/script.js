@@ -1,24 +1,20 @@
-let url = ['http://github.com/carbonfive/raygun', 'http://zombie.fandom.com/wiki/Bites', 'https://www.cnet.com'];
-let index = 2;
+function getDomainUrl(url) {
+    let firstInd = url.indexOf('www'), str = '';
 
-let firstInd = url[index].indexOf('www');
-if (firstInd == -1) {
-    firstInd = url[index].indexOf('/');
-    firstInd += 2;
-}
-else {
-    firstInd+=4;
-}
+    if (firstInd == -1) firstInd = ((firstInd = url.indexOf('/')) + 2);
+    else firstInd+=4; 
 
-let secondInd = url[index].indexOf('.com', firstInd);
-
-str = '';
-
-for(let i = firstInd; i < secondInd; i++) {
-   str += url[index].charAt(i);
+    for(let i = firstInd; i < url.indexOf('.', firstInd); i++) { 
+       str += url.charAt(i);
+    }
+    return str;
 }
 
-console.log(str)
+console.log(getDomainUrl('http://github.com/carbonfive/raygun'));
+console.log(getDomainUrl('http://www.zombie-bites.ru'));
+console.log(getDomainUrl('https://www.cnet.com'));
+
+
 
 
 

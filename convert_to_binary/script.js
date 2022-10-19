@@ -1,17 +1,8 @@
-let a = prompt("Введите десятичное число для преобразования их в двоичную", "")
+let a = +prompt("Введите десятичное число для преобразования их в двоичную", "")
 
-let b = 0;
-let arr = []
-let revArr = []
-
-while(a >= 1) {
-    a = a / 2;
-    b = ((a * 2) % 2)
-    arr.push(Math.trunc(Math.floor(b)));
+function convertToBinary(a) {
+    return a.toString(2);
 }
 
-for(let i = arr.length; i >= 0; i--) {
-    revArr.push(arr[i])
-}
+console.log(convertToBinary(a));
 
-console.log(revArr)
